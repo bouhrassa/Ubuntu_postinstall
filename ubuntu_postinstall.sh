@@ -39,7 +39,7 @@ GUI=$(zenity --list --checklist \
 	--column=Description \
 	TRUE "Update System" "Updates the package lists, the system packages and Applications."  \
 	FALSE "Initial configuration" "Ubuntu ONLY! Nautilus Admin" \
-	FALSE "Delete default apps" "Ubuntu ONLY! Delete firefox, cheese, mines, sudoku, thunderbird, aisleriot, mahjongg, web launcher, video effect" \
+	FALSE "Delete default apps" "Ubuntu ONLY! Delete firefox, calendar, transmission, cheese, mines, sudoku, thunderbird, aisleriot, mahjongg, web launcher, video effect" \
 	FALSE "Tweaks" "Ubuntu ONLY! Install Gnome tweak tool for additionnal options." \
 	TRUE "Speed-Up Memory Action" "Install preload and zRAM." \
 	TRUE "TLP" "Install TLP for better battery life." \
@@ -98,6 +98,8 @@ then
 	echo "Delete default apps..."
 	echo ""
 	sudo apt purge firefox -y
+	sudo apt purge gnome-calendar -y
+	sudo apt purge transmission-common -y
 	sudo apt purge cheese -y
 	sudo apt purge gnome-mines -y
 	sudo apt purge gnome-sudoku -y
